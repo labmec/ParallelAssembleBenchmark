@@ -10,5 +10,5 @@ file(GLOB_RECURSE PZ_SRC
 )
 add_custom_target( GlobalFiles SOURCES ${PZ_SRC})
 
-add_executable(pbench main.cpp) # creates an executable called myExecutable using the file main.cpp
-target_link_libraries(pbench NeoPZ::pz) # linking the executable myExecutable with the static lib fakeiset
+add_executable(pbench main.cpp) 
+target_link_libraries(pbench NeoPZ::pz) 
