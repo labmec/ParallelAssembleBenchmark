@@ -11,23 +11,39 @@
 #include "pzbuildmultiphysicsmesh.h"
 #include "TPZVTKGenerator.h"
 #include "TPZStructMatrixOMPorTBB.h"
+#include <fstream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-enum EMatid {EDomain, EBC};
 
-#define USE_STD
-//#define USE_TBB
+
+enum EMatid {EDomain, EBC};
+//#define USE_STD
+#define USE_TBB
 //#define USE_OMP
 
 int main (int argc, char * const argv[]) {
+
+fstream textfile;
+ofstream resultfile;
+int threadnum =0;
+textfile.open("../PTests.txt",ios::in);
+if (textfile.is_open()){ //checking whether the file is open
+  string tp;
+  while(getline(textfile, tp)){ //read data from file object and put it into string.
+     threadnum =  stoi(tp);
+  }
+  textfile.close(); //close the file object.
+  }
   
-  const bool isSolveAndPostProc = true;
+  const bool isSolveAndPostProc = false;
 
   // Create geometric mesh
   const TPZVec<REAL> minX = {-1.,-1.,-1.};
   const TPZVec<REAL> maxX = {1.,1.,1.};
-  const int ndivperside = 10;
+  const int ndivperside = 5;
   const TPZVec<int> nelDiv = {ndivperside,ndivperside,ndivperside};
   const MMeshType elType = MMeshType::EHexahedral;
   TPZGenGrid3D gen3d(minX,maxX,nelDiv,elType);
@@ -63,7 +79,7 @@ int main (int argc, char * const argv[]) {
   TPZMultiphysicsCompMesh *cmesh = hdivCreator.CreateApproximationSpace();
   
   // Create analysis
-  const int nThreads = 1;
+  const int nThreads = threadnum;
   TPZLinearAnalysis an(cmesh,true);
 #if defined(USE_STD)
   TPZSSpStructMatrix<STATE,TPZStructMatrixOR<STATE>> matsp(cmesh);
@@ -87,6 +103,8 @@ int main (int argc, char * const argv[]) {
   TPZSimpleTimer time_assemble("Assemble timer");
   an.Assemble();
   cout << "Total time for assemble = " << time_assemble.ReturnTimeDouble() / 1000. << " seconds" << endl;
+  resultfile.open("../Results.txt",ios_base::app);
+  resultfile <<  "Total time for assemble = " << time_assemble.ReturnTimeDouble() / 1000. << " seconds"  << endl;
   
   // Solve problem (Not needed for timing!)
   if(isSolveAndPostProc) an.Solve();

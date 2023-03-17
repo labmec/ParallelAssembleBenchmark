@@ -1,0 +1,40 @@
+Resultados para TBB
+Number of threads: 2
+Total time for assemble = 9.16092 seconds
+Number of threads: 4
+Total time for assemble = 5.61552 seconds
+Number of threads: 8
+Total time for assemble = 3.93145 seconds
+Number of threads: 16
+Total time for assemble = 3.64342 seconds
+Number of threads: 32
+Total time for assemble = 3.66 seconds
+Number of threads: 64
+Total time for assemble = 3.65536 seconds
+Resultados para TBB
+Number of threads: 2
+Resultados para TBB
+Number of threads: 2
+Total time for assemble = 9.54911 seconds
+Number of threads: 4
+Resultados para TBB
+Number of threads: 2
+Resultados para TBB
+Number of threads: 2
+Total time for assemble = 8.84501 seconds
+Number of threads: 4
+Total time for assemble = 5.38016 seconds
+Number of threads: 8
+Total time for assemble = 3.817 seconds
+Number of threads: 16
+Total time for assemble = 3.56074 seconds
+Number of threads: 32
+Total time for assemble = 3.54027 seconds
+Number of threads: 64
+Total time for assemble = 3.57162 seconds
+Resultados para TBB
+Number of threads: 2
+Total time for assemble = 27.4168 seconds
+Number of threads: 4
+Total time for assemble = 23.9438 seconds
+Number of threads: 8
