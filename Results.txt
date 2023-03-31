@@ -1,40 +1,126 @@
+-------TEST #0 --------------------------
+ndivperside = 5
+pOrder = 3
+
+
+Resultado Para Serial
+Total time for assemble = 32.7935 seconds
+
 Resultados para TBB
 Number of threads: 2
-Total time for assemble = 9.16092 seconds
+Total time for assemble = 16.7918 seconds
 Number of threads: 4
-Total time for assemble = 5.61552 seconds
+Total time for assemble = 8.94172 seconds
 Number of threads: 8
-Total time for assemble = 3.93145 seconds
+Total time for assemble = 4.72665 seconds
+Number of threads: 12
+Total time for assemble = 3.60502 seconds
 Number of threads: 16
-Total time for assemble = 3.64342 seconds
+Total time for assemble = 2.87766 seconds
+Number of threads: 24
+Total time for assemble = 3.0405 seconds
 Number of threads: 32
-Total time for assemble = 3.66 seconds
+Total time for assemble = 3.06117 seconds
 Number of threads: 64
-Total time for assemble = 3.65536 seconds
-Resultados para TBB
+Total time for assemble = 3.12 seconds
+
+Resultados para OMP
 Number of threads: 2
-Resultados para TBB
-Number of threads: 2
-Total time for assemble = 9.54911 seconds
+Total time for assemble = 17.3326 seconds
 Number of threads: 4
-Resultados para TBB
-Number of threads: 2
-Resultados para TBB
-Number of threads: 2
-Total time for assemble = 8.84501 seconds
-Number of threads: 4
-Total time for assemble = 5.38016 seconds
+Total time for assemble = 8.94279 seconds
 Number of threads: 8
-Total time for assemble = 3.817 seconds
+Total time for assemble = 4.72319 seconds
+Number of threads: 12
+Total time for assemble = 3.4766 seconds
 Number of threads: 16
-Total time for assemble = 3.56074 seconds
+Total time for assemble = 2.8348 seconds
+Number of threads: 24
+Total time for assemble = 2.83878 seconds
 Number of threads: 32
-Total time for assemble = 3.54027 seconds
+Total time for assemble = 2.87551 seconds
 Number of threads: 64
-Total time for assemble = 3.57162 seconds
+Total time for assemble = 3.13407 seconds
+
+Resultados para STD
+Number of threads: 2
+Total time for assemble = 16.7334 seconds
+Number of threads: 4
+Total time for assemble = 8.82083 seconds
+Number of threads: 8
+Total time for assemble = 4.64789 seconds
+Number of threads: 12
+Total time for assemble = 3.49304 seconds
+Number of threads: 16
+Total time for assemble = 2.82283 seconds
+Number of threads: 24
+Total time for assemble = 2.8272 seconds
+Number of threads: 32
+Total time for assemble = 2.81293 seconds
+Number of threads: 64
+Total time for assemble = 3.13439 seconds
+
+--------END OF TEST#0---------------------
+
+-------TEST #1 --------------------------
+ndivperside=15
+pOrder=3
+
+Resultado para Serial
+Total time for assemble = 883.838 seconds
+
 Resultados para TBB
 Number of threads: 2
-Total time for assemble = 27.4168 seconds
+Total time for assemble = 449.373 seconds
 Number of threads: 4
-Total time for assemble = 23.9438 seconds
+Total time for assemble = 236.054 seconds
 Number of threads: 8
+Total time for assemble = 124.942 seconds
+Number of threads: 12
+Total time for assemble = 92.8652 seconds
+Number of threads: 16
+Total time for assemble = 77.7155 seconds
+Number of threads: 24
+Total time for assemble = 78.2407 seconds
+Number of threads: 32
+Total time for assemble = 80.0452 seconds
+Number of threads: 64
+Total time for assemble = 79.5351 seconds
+
+Resultados para OMP
+Number of threads: 2
+Total time for assemble = 449.702 seconds
+Number of threads: 4
+Total time for assemble = 235.565 seconds
+Number of threads: 8
+Total time for assemble = 124.692 seconds
+Number of threads: 12
+Total time for assemble = 92.882 seconds
+Number of threads: 16
+Total time for assemble = 77.5128 seconds
+Number of threads: 24
+Total time for assemble = 78.316 seconds
+Number of threads: 32
+Total time for assemble = 79.623 seconds
+Number of threads: 64
+Total time for assemble = 82.0587 seconds
+
+Resultados para STD
+Number of threads: 2
+Total time for assemble = 447.394 seconds
+Number of threads: 4
+Total time for assemble = 234.771 seconds
+Number of threads: 8
+Total time for assemble = 123.188 seconds
+Number of threads: 12
+Total time for assemble = 92.0645 seconds
+Number of threads: 16
+Total time for assemble = 77.2859 seconds
+Number of threads: 24
+Total time for assemble = 78.1984 seconds
+Number of threads: 32
+Total time for assemble = 79.4424 seconds
+Number of threads: 64
+Total time for assemble = 81.9725 seconds
+
+--------END OF TEST#1---------------------

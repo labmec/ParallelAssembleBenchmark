@@ -20,8 +20,8 @@ using namespace std;
 
 
 enum EMatid {EDomain, EBC};
-//#define USE_STD
-#define USE_TBB
+#define USE_STD
+//#define USE_TBB
 //#define USE_OMP
 
 int main (int argc, char * const argv[]) {
@@ -36,14 +36,13 @@ if (textfile.is_open()){ //checking whether the file is open
      threadnum =  stoi(tp);
   }
   textfile.close(); //close the file object.
-  }
-  
+  }  
   const bool isSolveAndPostProc = false;
 
   // Create geometric mesh
   const TPZVec<REAL> minX = {-1.,-1.,-1.};
   const TPZVec<REAL> maxX = {1.,1.,1.};
-  const int ndivperside = 5;
+  const int ndivperside = 15;
   const TPZVec<int> nelDiv = {ndivperside,ndivperside,ndivperside};
   const MMeshType elType = MMeshType::EHexahedral;
   TPZGenGrid3D gen3d(minX,maxX,nelDiv,elType);
@@ -57,7 +56,7 @@ if (textfile.is_open()){ //checking whether the file is open
   }
   
   // Create computational mesh
-  const int pOrder = 2;
+  const int pOrder = 3;
   TPZHDivApproxCreator hdivCreator(gmesh);
   hdivCreator.SetDefaultOrder(pOrder);
   hdivCreator.ProbType() = ProblemType::EDarcy;
